@@ -370,7 +370,7 @@ class TitleState extends MusicBeatState
 		logo.antialiasing = ClientPrefs.globalAntialiasing;
 		// add(logo);
 
-		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
+		FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
 		// FlxTween.tween(logo, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
 
 		credGroup = new FlxGroup();
@@ -629,16 +629,17 @@ class TitleState extends MusicBeatState
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
 				case 2:
 					#if PSYCH_WATERMARKS
-					createCoolText(['Psych Engine by'], 15);
+					createCoolText(['Mods by'], 15);
 					#else
-					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+					createCoolText(['ayedFNFmaker']);
 					#end
 				// credTextShit.visible = true;
 				case 4:
 					#if PSYCH_WATERMARKS
-					addMoreText('Shadow Mario', 15);
-					addMoreText('RiverOaken', 15);
-					addMoreText('shubs', 15);
+					addMoreText('ayedFNFmaker', 15);
+					addMoreText('Ezra TigerYT', 15);
+					addMoreText('Wastanky', 15);
+					addMoreText('Cassie', 15);
 					#else
 					addMoreText('present');
 					#end
@@ -651,13 +652,14 @@ class TitleState extends MusicBeatState
 				// credTextShit.screenCenter();
 				case 6:
 					#if PSYCH_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
+					createCoolText(['ayedFNFmaker', 'he'], -40);
 					#else
-					createCoolText(['In association', 'with'], -40);
+					createCoolText(['sooo bad to making mods', 'with'], -40);
 					#end
 				case 8:
-					addMoreText('newgrounds', -40);
+					//addMoreText('newgrounds', -40);
 					ngSpr.visible = true;
+					addMoreText('SEE', -40);
 				// credTextShit.text += '\nNewgrounds';
 				case 9:
 					deleteCoolText();
@@ -678,15 +680,17 @@ class TitleState extends MusicBeatState
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
 				case 14:
-					addMoreText('Friday');
+					addMoreText('Vs');
 				// credTextShit.visible = true;
 				case 15:
-					addMoreText('Night');
+					addMoreText('ayed');
 				// credTextShit.text += '\nNight';
 				case 16:
-					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
+					addMoreText('EDITION'); // credTextShit.text += '\nFunkin';
 				case 17:
+					addMoreText('V2');
+					
+				case 18:
 					skipIntro();
 			}
 		}
